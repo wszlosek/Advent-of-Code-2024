@@ -32,3 +32,16 @@ func GetKeys(m map[string]int) []string {
 	}
 	return keys
 }
+
+func RemoveFromList(slice []int, i int) []int {
+	sliceCopy := make([]int, len(slice))
+	copy(sliceCopy, slice)
+	return append(sliceCopy[:i], sliceCopy[i+1:]...)
+}
+
+func PrintList(list []int) {
+	for _, item := range list {
+		print(item, " ")
+	}
+	println()
+}
