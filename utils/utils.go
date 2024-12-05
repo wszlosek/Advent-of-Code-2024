@@ -45,3 +45,18 @@ func PrintList(list []int) {
 	}
 	println()
 }
+
+func ReadMatrix(path string) [][]string {
+	lines := ReadLines(path)
+	var matrix [][]string
+
+	for i, line := range lines {
+		if len(matrix) <= i {
+			matrix = append(matrix, []string{})
+		}
+
+		matrix[i] = strings.Split(line, "")
+	}
+
+	return matrix
+}
